@@ -10,6 +10,8 @@ import org.apache.ibatis.logging.Log;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
+import java.util.regex.Matcher;
+
 /**
  * @author wmgx
  * @create 2021-02-13-23:06
@@ -53,10 +55,10 @@ public class MybatisPlusLogPlus implements Log {
             // ==> Parameters:  固定开头 16位
             s = s.split("Parameters: ")[1];
             for (String t : s.split("\\), "))
-                sql =sql.replaceFirst("\\?","'"+t.substring(0,t.indexOf("("))+"'");
+                sql =sql.replaceFirst("\\?","'"+Matcher.quoteReplacement(t.substring(0,t.indexOf("("))+"'"));
             return;
         }
-        if (s.contains("Total:")){
+        if (s.contains("<==      Total:") || s.contains("<==    Updates:")){
             logger.info("==> SQL statement: \n"+ SqlFormatter.format(sql)+"\n"+s);
             return;
         }
