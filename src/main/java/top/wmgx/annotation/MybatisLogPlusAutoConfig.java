@@ -1,7 +1,7 @@
 package top.wmgx.annotation;
 
 import org.springframework.context.annotation.Import;
-import top.wmgx.MybatisPlusLogPlus;
+import top.wmgx.MybatisLogPlus;
 
 import java.lang.annotation.*;
 
@@ -12,6 +12,6 @@ import java.lang.annotation.*;
 @Retention(RetentionPolicy.RUNTIME)
 @Target(ElementType.TYPE)
 @Documented
-@Import({MybatisPlusLogPlus.class})
-public @interface MybatisPlusLogPlusAutoConfig {
+@Import({MybatisLogPlus.class})
+public @interface MybatisLogPlusAutoConfig {
 }

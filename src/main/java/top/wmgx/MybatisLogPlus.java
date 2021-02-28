@@ -25,44 +25,55 @@ import java.util.stream.IntStream;
  * @create 2021-02-13-23:06
  **/
 @Configuration
-public class MybatisPlusLogPlus implements Log {
+public class MybatisLogPlus implements Log {
     private Logger logger;
     private String sql = "";
 
+    /**
+     * 是否输出结果
+     */
     private static boolean enableShowResult;
 
     private Table table = new Table();
-
+    /**
+     * 每列最大宽度，超过会被截断
+     */
     private static Integer maxWidth;
 
+    /**
+     * 前n行
+     */
     private static Integer topLine;
 
+    /**
+     * 前n列
+     */
     private static Integer topColumn;
 
 
-    public MybatisPlusLogPlus(String s) {
+    public MybatisLogPlus(String s) {
         logger = LoggerFactory.getLogger(s);
     }
-    public MybatisPlusLogPlus() {
+    public MybatisLogPlus() {
     }
-    @Value("${top.wmgx.mybatisPlusLogPlus.enableShowResult:false}")
+    @Value("${top.wmgx.mybatisLogPlus.enableShowResult:false}")
     public  void setEnableShowResult(boolean enableShowResult) {
-        MybatisPlusLogPlus.enableShowResult = enableShowResult;
+        MybatisLogPlus.enableShowResult = enableShowResult;
     }
 
-    @Value("${top.wmgx.mybatisPlusLogPlus.maxWidth:20}")
+    @Value("${top.wmgx.mybatisLogPlus.maxWidth:20}")
     public  void setMaxWidth(Integer maxWidth) {
-        MybatisPlusLogPlus.maxWidth = maxWidth;
+        MybatisLogPlus.maxWidth = maxWidth;
     }
 
-    @Value("${top.wmgx.mybatisPlusLogPlus.topLine:30}")
+    @Value("${top.wmgx.mybatisLogPlus.topLine:30}")
     public  void setTopLine(Integer topLine) {
-        MybatisPlusLogPlus.topLine = topLine;
+        MybatisLogPlus.topLine = topLine;
     }
 
-    @Value("${top.wmgx.mybatisPlusLogPlus.topColumn:9}")
+    @Value("${top.wmgx.mybatisLogPlus.topColumn:9}")
     public  void setTopColumn(Integer topColumn) {
-        MybatisPlusLogPlus.topColumn = topColumn;
+        MybatisLogPlus.topColumn = topColumn;
     }
 
     @Override

@@ -5,8 +5,8 @@
     <modelVersion>4.0.0</modelVersion>
 
     <groupId>top.wmgx</groupId>
-    <artifactId>MybatisPlusLogPlus</artifactId>
-    <version>1.3</version>
+    <artifactId>MybatisLogPlus</artifactId>
+    <version>1.4</version>
     <build>
         <plugins>
             <plugin>

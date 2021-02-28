@@ -22,16 +22,16 @@
 
 ~~~properties
 # 输出结果
-top.wmgx.mybatisPlusLogPlus.enableShowResult=true
+top.wmgx.mybatisLogPlus.enableShowResult=true
 # 每列最大宽度（默认10）
-top.wmgx.mybatisPlusLogPlus.maxWidth=10
+top.wmgx.mybatisLogPlus.maxWidth=10
 # 显示前n条记录（默认30）
-top.wmgx.mybatisPlusLogPlus.topLine=30
+top.wmgx.mybatisLogPlus.topLine=30
 # 显示前n列（默认9）
-top.wmgx.mybatisPlusLogPlus.topColumn=9
+top.wmgx.mybatisLogPlus.topColumn=9
 ~~~
 
-使用方法一要在启动类上加入`@MybatisPlusLogPlusAutoConfig`注解
+使用方法一要在启动类上加入`@MybatisLogPlusAutoConfig`注解
 
 使用方法二不用可以直接使用。
 
@@ -42,7 +42,7 @@ top.wmgx.mybatisPlusLogPlus.topColumn=9
 ~~~xml
     <dependency>
             <groupId>top.wmgx</groupId>
-            <artifactId>MybatisPlusLogPlus</artifactId>
+            <artifactId>MybatisLogPlus</artifactId>
             <version>1.0</version>
             <scope>system</scope>
             <systemPath>${project.basedir}/{存放的项目下的目录}/MybatisPlusLogPlus-1.3.jar</systemPath>
@@ -50,11 +50,11 @@ top.wmgx.mybatisPlusLogPlus.topColumn=9
 ~~~
 3. 配置文件
 ~~~properties
-mybatis-plus.configuration.log-impl=top.wmgx.MybatisPlusLogPlus
+mybatis.configuration.log-impl=top.wmgx.MybatisLogPlus
 ~~~
 ## 方法二
 
-- 将MybatisPlusLogPlus.java直接拷贝到项目中，配置文件中写这个类的路径即可
+- MybatisLogPlus.java直接拷贝到项目中，配置文件中写这个类的路径即可
 - 代码很简单，自行修改即可。
 - SqlFormatter为Hutool的工具类，可以不用，目的是输出美观的sql。
 - 为方便拷贝，将所有的代码都在一个类中写了。
