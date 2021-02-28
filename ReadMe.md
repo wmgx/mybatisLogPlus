@@ -43,14 +43,17 @@ top.wmgx.mybatisLogPlus.topColumn=9
     <dependency>
             <groupId>top.wmgx</groupId>
             <artifactId>MybatisLogPlus</artifactId>
-            <version>1.0</version>
+            <version>1.4</version>
             <scope>system</scope>
-            <systemPath>${project.basedir}/{存放的项目下的目录}/MybatisPlusLogPlus-1.3.jar</systemPath>
+            <systemPath>${project.basedir}/{存放的项目下的目录}/MybatisPlusLogPlus-1.4.jar</systemPath>
         </dependency>
 ~~~
 3. 配置文件
 ~~~properties
+# mybatis 配置
 mybatis.configuration.log-impl=top.wmgx.MybatisLogPlus
+# mybatis -plus 配置
+mybatis-plus.configuration.log-impl=top.wmgx.MybatisLogPlus
 ~~~
 ## 方法二
 
