@@ -1,6 +1,6 @@
 # 基本描述
 - MyBatis的日志类的一个实现，增加了基础的参数替换功能。
-- 将查询结果以表格的形式输出。
+- 将查询结果以表格的形式输出（中英文对齐）。
 
 # 效果
 ![效果展示](images/show.jpg)
@@ -11,8 +11,8 @@
 # 注意
 
 1. 输出的级别为INFO级别
-
 2. 默认不输出结果集
+3. 当使用非等宽字体的时候，可能会导致含有中文行的和不含有中文行的对不起，切换到等宽字体下，显示正常
 
 # 使用
 
@@ -58,3 +58,7 @@ mybatis-plus.configuration.log-impl=top.wmgx.MybatisPlusLogPlus
 - 代码很简单，自行修改即可。
 - SqlFormatter为Hutool的工具类，可以不用，目的是输出美观的sql。
 - 为方便拷贝，将所有的代码都在一个类中写了。
+
+
+
+> 表格输出的代码改自 https://github.com/Yanqin25/jdbcConnectTool.git
