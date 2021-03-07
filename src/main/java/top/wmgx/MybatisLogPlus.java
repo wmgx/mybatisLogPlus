@@ -148,9 +148,9 @@ public class MybatisLogPlus implements Log {
         if (s.startsWith("<==    Columns: ")) {
             table.clear();
             List<String> list = new ArrayList<>(Arrays.asList(s.substring(16).split(", ")));
-
-            if (!(list.get(0).startsWith("count") && list.size() == 1))
-                list.add(0, "row_index");
+// 误以为是列号
+//            if (!(list.get(0).startsWith("count") && list.size() == 1))
+//                list.add(0, "row_index");
             table.addLine(list);
         }
 

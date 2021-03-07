@@ -1,4 +1,5 @@
 # 基本描述
+
 - MyBatis的日志类的一个实现，增加了基础的参数替换功能。
 - 将查询结果以表格的形式输出（中英文对齐）。
 
@@ -6,7 +7,7 @@
 ![效果展示](images/show.jpg)
 
 
-![效果展示](images/show1.png)
+![效果展示](images/show1..png)
 
 # 注意
 
@@ -43,9 +44,9 @@ top.wmgx.mybatisLogPlus.topColumn=9
     <dependency>
             <groupId>top.wmgx</groupId>
             <artifactId>MybatisLogPlus</artifactId>
-            <version>1.4</version>
+            <version>1.5</version>
             <scope>system</scope>
-            <systemPath>${project.basedir}/{存放的项目下的目录}/MybatisPlusLogPlus-1.4.jar</systemPath>
+            <systemPath>${project.basedir}/{存放的项目下的目录}/MybatisPlusLogPlus-1.5.jar</systemPath>
         </dependency>
 ~~~
 3. 配置文件
