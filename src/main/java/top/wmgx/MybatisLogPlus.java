@@ -6,6 +6,7 @@ package top.wmgx;
  **/
 
 
+import cn.hutool.db.meta.Table;
 import cn.hutool.db.sql.SqlFormatter;
 import org.apache.ibatis.logging.Log;
 import org.slf4j.Logger;
@@ -34,7 +35,7 @@ public class MybatisLogPlus implements Log {
      */
     private static boolean enableShowResult;
 
-    private Table table = new Table();
+    private final Table table = new Table();
     /**
      * 每列最大宽度，超过会被截断
      */
@@ -99,7 +100,7 @@ public class MybatisLogPlus implements Log {
     /**
      * debug 级别信息太多，Info级别信息差不多 调用的Info的输出
      *
-     * @param s
+     * @param s 输出结果
      */
     @Override
     public void debug(String s) {
@@ -130,8 +131,10 @@ public class MybatisLogPlus implements Log {
         if (s.contains("<==      Total:") || s.contains("<==    Updates:")) {
             logger.info("==> SQL statement: \n" + SqlFormatter.format(sql) + "\n" + s);
             if (enableShowResult && s.contains("<==      Total:")) {
-                logger.info(table.format());
-                table.clear();
+                if(table.content.size()!=0){
+                    logger.info(table.format());
+                    table.clear();
+                }
             }
             return;
         }
@@ -166,11 +169,11 @@ public class MybatisLogPlus implements Log {
     }
 
 
-    private class Table {
+    private static class  Table {
         /**
          * 表格内容（含表头）
          */
-        private List<List<String>> content = new ArrayList<>();
+        private final List<List<String>> content = new ArrayList<>();
 
 
         private List<Integer> getMaxWidthList() {
@@ -218,7 +221,7 @@ public class MybatisLogPlus implements Log {
         /**
          * 转置二维数组
          *
-         * @return
+         * @return 转置后的结果
          */
         private String[][] transpose() {
             int rowCount = getRowCount();
